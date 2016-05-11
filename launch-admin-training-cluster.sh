@@ -72,7 +72,7 @@ create_persistent_data_disks() {
 				--zone $zone \
 				--size ${dsize}GB
 			if [ $? -eq 0 ] ; then
-				pdisk_args=${pdisk_args}' '--disk' 'name=$diskname,mode=rw
+				pdisk_args=${pdisk_args} --disk name=$diskname,mode=rw
 			fi
 		fi
  	done
