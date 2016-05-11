@@ -189,13 +189,9 @@ do
 		${project_arg:-} \
 		--image $maprimage \
 		--machine-type $machinetype \
-		--zone $zone \
-		${pdisk_args:-} \
-		--metadata-from-file \
-		  startup-script=prepare-mapr-image.sh \
-		--metadata \
-		  maprversion=${maprversion} \
-		  maprpackages=none \
+		--zone $zone, ${pdisk_args:-} \
+		--metadata-from-file startup-script=prepare-mapr-image.sh \
+		--metadata maprversion=${maprversion}, maprpackages=none \
 		--scopes storage-full &
 done
 
