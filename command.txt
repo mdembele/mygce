@@ -1,0 +1,2 @@
+./launch-mapr-cluster.sh --project mapr-1308 --cluster MapRonGCE --mapr-version 5.1 --config-file myrolesfile.txt --machine-type n1-highmem-2 --image ubuntu-1604-lts --zone europe-west1-c --persistent-disks 6x10
+./launch-admin-training-cluster.sh --project mapr-1308 --config-file 4node_yarn.lst --machine-type n1-highmem-2 --image ubuntu-1604-lts --zone europe-west1-c --persistent-disks 6x10
