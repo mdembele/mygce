@@ -195,7 +195,7 @@ do
 		--metadata-from-file \
 		  startup-script=prepare-mapr-image.sh \
 		--metadata \
-		  maprversion=${maprversion} \
+		  maprversion=${maprversion},\
 		  maprpackages=none \
 		--scopes storage-full &
 done
