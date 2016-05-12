@@ -191,7 +191,7 @@ do
 		--image $maprimage \
 		--machine-type $machinetype \
 		--zone $zone \
-		${pdisk_args:-} \
+		--disk ${pdisk_args:-} \
 		--metadata-from-file \
 		  startup-script=prepare-mapr-image.sh \
 		--metadata \
