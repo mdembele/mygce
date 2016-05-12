@@ -185,6 +185,7 @@ do
 		[ -z "$pdisk_args" ] && continue
 	fi
 
+	echo "${pdisk_args:-}"
 	gcloud compute instances create $host \
 		${project_arg:-} \
 		--image $maprimage \
