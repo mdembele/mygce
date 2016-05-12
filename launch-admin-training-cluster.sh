@@ -64,7 +64,7 @@ create_persistent_data_disks() {
 			| grep -q $diskname
 
 		if [ $? -eq 0 ] ; then
-			pdisk_args=${pdisk_args}' '' 'name=$diskname','mode=rw
+			pdisk_args=${pdisk_args}' '' 'name=$diskname
 		else
 			gcloud compute disks create \
 				$diskname \
@@ -72,7 +72,7 @@ create_persistent_data_disks() {
 				--zone $zone \
 				--size ${dsize}GB
 			if [ $? -eq 0 ] ; then
-				pdisk_args=${pdisk_args}' '--disk' 'name=$diskname','mode=rw
+				pdisk_args=${pdisk_args}' '--disk' 'name=$diskname
 			fi
 		fi
  	done
@@ -191,7 +191,7 @@ do
 		--image $maprimage \
 		--machine-type $machinetype \
 		--zone $zone \
-		--disk ${pdisk_args:-} \
+		${pdisk_args:-} \
 		--metadata-from-file \
 		  startup-script=prepare-mapr-image.sh \
 		--metadata \
