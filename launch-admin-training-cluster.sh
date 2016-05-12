@@ -64,7 +64,7 @@ create_persistent_data_disks() {
 			| grep -q $diskname
 
 		if [ $? -eq 0 ] ; then
-			pdisk_args=${pdisk_args}' '' 'name=$diskname
+			pdisk_args=${pdisk_args}' '--disk' 'name=$diskname
 		else
 			gcloud compute disks create \
 				$diskname \
